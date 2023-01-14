@@ -29,7 +29,7 @@ class Media(Http):
             ret = self.command(
                 f"mediaFileFind.cgi?action=close&object={factory_id}"
             )
-        except:
+        except HTTPError:
             ret = self.command(
                 f"mediaFileFind.cgi?action=factory.close&object={factory_id}"
             )
@@ -41,7 +41,7 @@ class Media(Http):
             ret = self.command(
                 f"mediaFileFind.cgi?action=destroy&object={factory_id}"
             )
-        except:
+        except HTTPError:
             ret = self.command(
                 f"mediaFileFind.cgi?action=factory.destroy&object={factory_id}"
             )
